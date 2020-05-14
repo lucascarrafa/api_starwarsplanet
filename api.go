@@ -151,7 +151,11 @@ func delPlaneta(w http.ResponseWriter, r *http.Request) {
 	planetsCollection := universeDatabase.Collection("planets")
 	
 	vars := mux.Vars(r)
-	filter := bson.M{"nome": vars["nome"] }
+	idPrimitive, errid := primitive.ObjectIDFromHex(vars["id"])
+	if errid != nil {
+		log.Fatal("primitive.ObjectIDFromHex ERROR:", err)
+	}
+	filter := bson.M{"_id": idPrimitive}
 
 	deleteResult, _ := planetsCollection.DeleteOne(ctx, filter)
 
@@ -196,7 +200,7 @@ func main(){
 	r.HandleFunc("/add", inserirPlaneta).Methods("POST")
 	r.HandleFunc("/lista", listaPlanetas).Methods("GET")
 	r.HandleFunc("/busca/{nome}", buscaNome).Methods("GET")
-	r.HandleFunc("/del/{nome}", delPlaneta).Methods("DELETE")
+	r.HandleFunc("/del/{id}", delPlaneta).Methods("DELETE")
 	r.HandleFunc("/buscaID/{id}", buscaId).Methods("GET")
 	http.ListenAndServe(":3333", r)
 }
