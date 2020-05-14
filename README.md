@@ -20,7 +20,7 @@
 
 ## Funcionalidades desenvolvidas
 - Adicionar um planeta (com nome, clima e terreno)
-(ao adicinar um planeta a API se comunica com API do Star Wars (https://swapi.co/), obtem a quantidade de aparições e finaliza o processo de salvar)
+(ao adicinar um planeta a API se comunica com API do Star Wars (https://swapi.dev/), obtem a quantidade de aparições e finaliza o processo de salvar)
 - Listar planetas
 - Buscar por nome
 - Buscar por ID
@@ -30,9 +30,9 @@
 
 - Para rodar o teste de carga:
 
-´´´
+```
 $ docker run -i loadimpact/k6 run - <teste_k6.js
-´´´
+```
 
 ## API Rest
 
@@ -50,4 +50,5 @@ $ docker run -i loadimpact/k6 run - <teste_k6.js
 
 - Buscar por ID: [GET] http://localhost:3333/buscaID/{id}
 
-- Remover planeta: [DELETE] http://localhost:3333/del/{id}
+- Remover planeta: [DELETE] http://localhost:3333/del/{nome}
+
