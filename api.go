@@ -192,12 +192,12 @@ func status(w http.ResponseWriter, r *http.Request){
 
 func main(){
 	r := mux.NewRouter()
-	r.HandleFunc("/", status)
-	r.HandleFunc("/add", inserirPlaneta)
-	r.HandleFunc("/lista", listaPlanetas)
-	r.HandleFunc("/busca/{nome}", buscaNome)
-	r.HandleFunc("/del/{nome}", delPlaneta)
-	r.HandleFunc("/buscaID/{id}", buscaId)
+	r.HandleFunc("/", status).Methods("GET")
+	r.HandleFunc("/add", inserirPlaneta).Methods("POST")
+	r.HandleFunc("/lista", listaPlanetas).Methods("GET")
+	r.HandleFunc("/busca/{nome}", buscaNome).Methods("GET")
+	r.HandleFunc("/del/{nome}", delPlaneta).Methods("DELETE")
+	r.HandleFunc("/buscaID/{id}", buscaId).Methods("GET")
 	http.ListenAndServe(":3333", r)
 }
 
