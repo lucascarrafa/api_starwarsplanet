@@ -1,11 +1,11 @@
-**DesafioB2W Api Rest**
+# DesafioB2W Api Rest
 
-***Descrição***
+## Descrição
      
  Criar um jogo com algumas informações da franquia. Para possibilitar  a equipe de front criar essa aplicação, queremos desenvolver uma API que contenha os dados dos planetas.
 
 
-***Tecnologias utilizadas***
+## Tecnologias utilizadas
 
 - Golang
 - MongoDB Atlas
@@ -14,26 +14,27 @@
 - Visual Studio Code
 
 
-***Informações para utilizar a API***
+## Informações para utilizar a API
 - Para utilizar a API é necessário configurar o servidor do MongoDB Atlas
 
 
-***Funcionalidades desenvolvidas***
+## Funcionalidades desenvolvidas
 - Adicionar um planeta (com nome, clima e terreno)
-(ao adicinar um planeta a API se comunica com API do Star Wars (https://swapi.co/),obtem a quantidade de aparições e finaliza o processo de salvar)
+(ao adicinar um planeta a API se comunica com API do Star Wars (https://swapi.co/), obtem a quantidade de aparições e finaliza o processo de salvar)
 - Listar planetas
 - Buscar por nome
 - Buscar por ID
 - Remover planeta
 
-***Teste de carga***
+## Teste de carga
 
 - Para rodar o teste de carga:
+
 ´´´
 $ docker run -i loadimpact/k6 run - <teste_k6.js
 ´´´
 
-***API Rest***
+## API Rest
 
 - Adicionar um planeta: [POST] http://localhost:3333/add
 
@@ -49,4 +50,4 @@ $ docker run -i loadimpact/k6 run - <teste_k6.js
 
 - Buscar por ID: [GET] http://localhost:3333/buscaID/{id}
 
-- Remover planeta: [DELETE] http://localhost:3333/del/{nome}
+- Remover planeta: [DELETE] http://localhost:3333/del/{id}
