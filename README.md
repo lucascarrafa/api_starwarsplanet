@@ -50,5 +50,4 @@ $ docker run -i loadimpact/k6 run - <teste_k6.js
 
 - Buscar por ID: [GET] http://localhost:3333/buscaID/{id}
 
-- Remover planeta: [DELETE] http://localhost:3333/del/{nome}
-
+- Remover planeta: [DELETE] http://localhost:3333/del/{id}
